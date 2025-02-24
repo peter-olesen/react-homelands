@@ -1,19 +1,23 @@
 import { NavLink } from "react-router";
+import { PATHS } from "../../router/PATHS.js";
 import s from "./Navigation.module.scss";
 
 export const Navigation = () => {
   return (
     <nav className={s.Navigation}>
       <ul>
-        <li>
-          <NavLink to="/">Forside</NavLink>
-        </li>
-        <li>
-          <NavLink to="/homes-for-sale">Boliger til salg</NavLink>
-        </li>
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
+        {PATHS.map((item) => {
+          return (
+            <li key={item.id}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) => (isActive ? s.active : "")}
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

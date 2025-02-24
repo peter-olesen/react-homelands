@@ -13,12 +13,11 @@
   }
 
   a {
-    .active {
-      color: $brown;
-    }
-
     &:hover {
       color: $brown;
     }
+  }
+  .active {
+    color: $brown;
   }
 }

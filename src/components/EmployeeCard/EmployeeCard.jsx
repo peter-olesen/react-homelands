@@ -14,11 +14,11 @@ export const EmployeeCard = ({
       style={{ backgroundImage: `url(${imgSrc})` }}
     >
       <div className={s.InfoBox}>
-        <p>{employeeName}</p>
+        <p className="bold">{employeeName}</p>
         <p>{employeeTitle}</p>
         <div className={s.ContactInfo}>
-          <p>{employeeEmail}</p>
-          <p>{employeePhone}</p>
+          <p>Email: {employeeEmail}</p>
+          <p>Mobil: {employeePhone}</p>
         </div>
       </div>
     </div>

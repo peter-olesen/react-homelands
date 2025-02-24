@@ -1,0 +1,14 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.EstateCard {
+  //   width: 470px;
+
+  img {
+    width: 100%;
+  }
+  .InfoGrid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+  }
+}

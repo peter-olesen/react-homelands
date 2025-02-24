@@ -28,6 +28,10 @@
   }
 
   &:hover {
+    .InfoBox {
+      background: $gray;
+      color: $wht;
+    }
     .ContactInfo {
       display: block;
     }
