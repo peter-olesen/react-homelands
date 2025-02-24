@@ -1,0 +1,17 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Logo {
+  border: solid 2px $blk;
+  width: 270px;
+  height: 90px;
+  background: $brown;
+  color: $wht;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+}

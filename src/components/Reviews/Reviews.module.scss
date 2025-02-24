@@ -1,0 +1,11 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Review {
+  background: $pink;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,39 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Search {
+  display: flex;
+  flex-direction: row;
+  width: 247px;
+  height: 34px;
+
+  input[type="text"] {
+    background: $wht;
+    width: 100%;
+    padding: 0 20px;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border: none;
+    outline: none;
+    color: $blk;
+  }
+
+  button {
+    background: gray;
+    width: 38px;
+    height: 34px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: none;
+    color: $wht;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background: $brown;
+      cursor: pointer;
+    }
+  }
+}
