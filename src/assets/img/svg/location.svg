@@ -1,0 +1,7 @@
+<svg id="House_Detail_Link" data-name="House Detail Link" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84">
+  <g id="Ellipse_3" data-name="Ellipse 3" fill="#fff" stroke="#707070" stroke-width="1" opacity="0.524">
+    <circle cx="42" cy="42" r="42" stroke="none"/>
+    <circle cx="42" cy="42" r="41.5" fill="none"/>
+  </g>
+  <path id="Icon_metro-location" data-name="Icon metro-location" d="M19.252,1.928a10.9,10.9,0,0,0-10.9,10.9c0,10.9,10.9,23.973,10.9,23.973s10.9-13.076,10.9-23.973a10.9,10.9,0,0,0-10.9-10.9Zm0,17.571a6.674,6.674,0,1,1,6.674-6.674A6.674,6.674,0,0,1,19.252,19.5Zm-4.223-6.674a4.223,4.223,0,1,1,4.223,4.223A4.223,4.223,0,0,1,15.029,12.825Z" transform="translate(22.748 22.637)" fill="#666"/>
+</svg>

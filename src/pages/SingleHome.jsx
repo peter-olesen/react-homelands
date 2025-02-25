@@ -1,9 +1,15 @@
 import { useParams } from "react-router";
+import { useEffect } from "react";
 import { useGet } from "../hooks/useGet";
 import { Grid } from "../components/Grid";
-import s from "./styles/SingleHome.module.scss";
 import { Section } from "../components/Section";
 import { formatPrice } from "../helpers/priceFormatter";
+import s from "./styles/SingleHome.module.scss";
+
+import camera from "../assets/img/svg/camera.svg";
+import floorplan from "../assets/img/svg/floorplan.svg";
+import location from "../assets/img/svg/location.svg";
+import favorite from "../assets/img/svg/favorite.svg";
 
 export const SingleHome = () => {
   const { id } = useParams();
@@ -13,6 +19,10 @@ export const SingleHome = () => {
   );
 
   const home = data?.item;
+
+  useEffect(() => {
+    document.title = `${home?.address}, ${home?.zipcode} ${home?.city} - HomeLands`;
+  }, [data]);
 
   return (
     <Section>
@@ -27,37 +37,52 @@ export const SingleHome = () => {
           </p>
           <p>Set {home?.num_clicks} gange</p>
         </div>
-        <div>
-          <p>Galleri</p>
-          <p>Floorplan</p>
-          <p>Location</p>
-          <p>Favorite</p>
+        <div className={s.HomeIcons}>
+          <img src={camera} alt="" />
+          <img src={floorplan} alt="" />
+          <img src={location} alt="" />
+          <img src={favorite} alt="" />
         </div>
         <div>
           <p>Kontantpris {formatPrice(home?.price)}</p>
           <p>Udbetaling {formatPrice(home?.payout)}</p>
           <p>Ejerudgift per måned {formatPrice(home?.cost)}</p>
         </div>
-        <div>
-          <p>Sagsnr. {home?.id}</p>
-          <p>Boligareal {home?.floor_space} m&sup2;</p>
-          <p>Grundareal {home?.ground_space} m&sup2;</p>
-          <p>Antal rum {home?.num_rooms}</p>
-          <p>Antal plan {home?.num_floors}</p>
+        <div className={s.InfoGrid}>
+          <p>Sagsnr.</p>
+          <p className="bold">{home?.id}</p>
+          <p>Boligareal</p>
+          <p className="bold">{home?.floor_space} m&sup2;</p>
+          <p>Grundareal</p>
+          <p className="bold">{home?.ground_space} m&sup2;</p>
+          <p>Antal rum</p>
+          <p className="bold">{home?.num_rooms}</p>
+          <p>Antal plan</p>
+          <p className="bold">{home?.num_floors}</p>
         </div>
-        <div>
-          <p>Kælder {home?.basement_space}</p>
-          <p>Byggeår {home?.year_construction}</p>
-          <p>Ombygget {home?.year_rebuilt}</p>
-          <p>Energimærke {home?.energy_label_name}</p>
-          <p>Liggetid {home?.date_friendly}</p>
+        <div className={s.InfoGrid}>
+          <p>Kælder</p>
+          <p className="bold">{home?.basement_space} m&sup2;</p>
+          <p>Byggeår</p>
+          <p className="bold">{home?.year_construction}</p>
+          <p>Ombygget</p>
+          <p className="bold">{home?.year_rebuilt}</p>
+          <p>Energimærke</p>
+          <p className="bold">{home?.energy_label_name}</p>
+          <p>Liggetid</p>
+          <p className="bold">{home?.date_friendly}</p>
         </div>
-        <div>
-          <p>Kontantpris {formatPrice(home?.price)}</p>
-          <p>Udbetaling {formatPrice(home?.payout)}</p>
-          <p>Brutto ex. ejerudgift {formatPrice(home?.gross)}</p>
-          <p>Netto ex. ejerudgift {formatPrice(home?.net)}</p>
-          <p>Ejerudgift {formatPrice(home?.cost)}</p>
+        <div className={s.InfoGrid}>
+          <p>Kontantpris</p>
+          <p className="bold">{formatPrice(home?.price)}</p>
+          <p>Udbetaling</p>
+          <p className="bold">{formatPrice(home?.payout)}</p>
+          <p>Brutto ex. ejerudgift</p>
+          <p className="bold">{formatPrice(home?.gross)}</p>
+          <p>Netto ex. ejerudgift</p>
+          <p className="bold">{formatPrice(home?.net)}</p>
+          <p>Ejerudgift</p>
+          <p className="bold">{formatPrice(home?.cost)}</p>
         </div>
       </Grid>
       <div className={s.GridBox}>

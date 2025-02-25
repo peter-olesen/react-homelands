@@ -1,3 +1,18 @@
+.HomeIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.InfoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  p {
+    margin: 0.5rem;
+  }
+}
+
 .GridBox {
   display: grid;
   grid-template-columns: 2fr 1fr;

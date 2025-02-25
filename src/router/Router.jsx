@@ -19,6 +19,9 @@ export const Router = () => {
   useEffect(() => {
     const pageTitles = {
       "/": "HomeLands",
+      "/homes-for-sale": "Boliger til salg - HomeLands",
+      "/login": "Login - HomeLands",
+      "/dashboard": "Dashboard - HomeLands",
     };
 
     const currentTitle = pageTitles[location.pathname];
