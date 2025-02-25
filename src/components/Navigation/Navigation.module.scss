@@ -13,10 +13,13 @@
   }
 
   a {
+    color: $wht;
+
     &:hover {
       color: $brown;
     }
   }
+
   .active {
     color: $brown;
   }

@@ -5,6 +5,7 @@ import { EstateCard } from "../components/EstateCard/EstateCard";
 import { EnergyLabel } from "../components/EnergyLabel/EnergyLabel";
 import { useGet } from "../hooks/useGet";
 import { Grid } from "../components/Grid";
+import { formatPriceDecimal } from "../helpers/priceFormatter";
 
 export const Home = () => {
   const { data, isLoading, error } = useGet(
@@ -20,15 +21,10 @@ export const Home = () => {
               .sort(() => Math.random() - 0.5)
               .slice(0, 3)
               .map((item) => {
-                const priceToNumber = parseFloat(item.price);
-                const formattedPrice = new Intl.NumberFormat("da-DK", {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                }).format(priceToNumber);
-
                 return (
                   <EstateCard
                     key={item.id}
+                    path={item.id}
                     imgSrc={item.images[0].filename.medium}
                     address={item.address}
                     zipCity={`${item.zipcode} ${item.city}`}
@@ -38,7 +34,7 @@ export const Home = () => {
                     }
                     sqm={item.floor_space}
                     rooms={item.num_rooms}
-                    price={formattedPrice}
+                    price={formatPriceDecimal(item.price)}
                   />
                 );
               })}

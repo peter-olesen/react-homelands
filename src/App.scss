@@ -11,7 +11,7 @@ body {
   @extend %OpenSans;
 
   a {
-    color: $wht;
+    color: $blk;
     text-decoration: none;
   }
 
@@ -90,6 +90,10 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 2fr;
         align-items: center;
+
+        a {
+          color: $wht;
+        }
 
         h2 {
           @extend %Odibee;
