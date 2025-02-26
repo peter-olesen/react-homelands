@@ -1,5 +1,6 @@
 import s from "./EnergyLabel.module.scss";
 
+// Switch case borrowed from Amalie and rewritten to a reusuable component
 export const EnergyLabel = ({ energyLabel }) => {
   function getBackgroundColor(label) {
     switch (label) {

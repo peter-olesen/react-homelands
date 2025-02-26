@@ -17,8 +17,8 @@ export const Home = () => {
       <Section>
         <Grid col={3} fr={1} gap="2rem">
           {data?.items &&
-            [...data.items]
-              .sort(() => Math.random() - 0.5)
+            [...data.items] // Makes a copy of the original array to sort random
+              .sort(() => Math.random() - 0.5) //
               .slice(0, 3)
               .map((item) => {
                 return (

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router";
+import { Routes, Route, useLocation, Navigate } from "react-router";
 
 // Layout
 import { Layout } from "../layouts/Layout.jsx";
@@ -12,6 +12,7 @@ import { PageNotFound } from "../pages/PageNotFound.jsx";
 import { Dashboard } from "../pages/Dashboard.jsx";
 import { ProtectedRoute } from "./ProtectedRoute.jsx";
 import { SingleHome } from "../pages/SingleHome.jsx";
+import { Search } from "../pages/Search.jsx";
 
 export const Router = () => {
   const location = useLocation();
@@ -38,6 +39,10 @@ export const Router = () => {
         <Route index element={<Home />} />
         <Route path={"/homes-for-sale"} element={<HomesForSale />} />
         <Route path={"home/:id"} element={<SingleHome />} />
+
+        {/* Search */}
+        <Route path={"search/:keyword"} element={<Search />} />
+        <Route path={"search/*"} element={<Navigate to="/" replace />} />
 
         {/* Login and Dashboard Routes */}
         <Route path={"/login"} element={<Login />} />
