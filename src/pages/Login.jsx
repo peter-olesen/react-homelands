@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router";
-
+import { useNavigate } from "react-router";
 import { UserContext } from "../context/userContext";
 import { Section } from "../components/Section";
+import s from "./styles/Login.module.scss";
 
 export const Login = () => {
   const [loginMessage, setLoginMessage] = useState("");
@@ -48,10 +48,11 @@ export const Login = () => {
 
   return (
     <Section>
+      <h2>Login</h2>
       <p>Indtast dit brugernavn og adgangskode for at logge ind</p>
 
       <div id="formDiv">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={s.FormContainer} onSubmit={handleSubmit(onSubmit)}>
           <input
             type="email"
             autoComplete="email"
@@ -88,8 +89,6 @@ export const Login = () => {
 
       {loginMessage && <p>{loginMessage}</p>}
       {error && <p className="error">{error}</p>}
-      <br />
-      {/* <NavLink to="/signup">Opret bruger</NavLink> */}
     </Section>
   );
 };

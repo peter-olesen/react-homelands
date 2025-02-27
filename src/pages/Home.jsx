@@ -4,8 +4,8 @@ import { Section } from "../components/Section";
 import { EstateCard } from "../components/EstateCard/EstateCard";
 import { EnergyLabel } from "../components/EnergyLabel/EnergyLabel";
 import { useGet } from "../hooks/useGet";
-import { Grid } from "../components/Grid";
 import { formatPriceDecimal } from "../helpers/priceFormatter";
+import s from "./styles/Home.module.scss";
 
 export const Home = () => {
   const { data, isLoading, error } = useGet(
@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     <>
       <Section>
-        <Grid col={3} fr={1} gap="2rem">
+        <div className={s.CardGrid}>
           {data?.items &&
             [...data.items] // Makes a copy of the original array to sort random
               .sort(() => Math.random() - 0.5) //
@@ -38,7 +38,7 @@ export const Home = () => {
                   />
                 );
               })}
-        </Grid>
+        </div>
       </Section>
       <Reviews />
       <Section>

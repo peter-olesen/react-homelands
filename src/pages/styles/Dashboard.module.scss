@@ -1,0 +1,20 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.4fr;
+  border-bottom: 1px solid #000;
+
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.Grid:last-of-type {
+  border: none;
+}
+
+.Delete {
+  color: red;
+}

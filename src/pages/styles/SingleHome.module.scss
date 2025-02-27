@@ -1,3 +1,24 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.HeaderImg {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: -5rem;
+}
+
+.EstateInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2rem;
+  background: $wht;
+  padding: 0.5rem 2rem;
+}
+
 .HomeIcons {
   display: flex;
   flex-direction: row;
@@ -20,5 +41,16 @@
 
   img {
     width: 100%;
+  }
+}
+
+.Agent {
+  h2 {
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+
+  img {
+    width: 50%;
   }
 }

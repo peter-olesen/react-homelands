@@ -36,4 +36,15 @@
       display: block;
     }
   }
+
+  @media (max-width: 768px) {
+    .ContactInfo {
+      display: block;
+    }
+
+    .InfoBox {
+      background: $gray;
+      color: $wht;
+    }
+  }
 }

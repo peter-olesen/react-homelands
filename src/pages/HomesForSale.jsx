@@ -2,16 +2,17 @@ import { Section } from "../components/Section";
 import { EstateCard } from "../components/EstateCard/EstateCard";
 import { EnergyLabel } from "../components/EnergyLabel/EnergyLabel";
 import { useGet } from "../hooks/useGet";
-import { Grid } from "../components/Grid";
 import { formatPriceDecimal } from "../helpers/priceFormatter";
+import s from "./styles/HomesForSale.module.scss";
 
 export const HomesForSale = () => {
   const { data, isLoading, error } = useGet(
     "https://api.mediehuset.net/homelands/homes"
   );
+
   return (
     <Section>
-      <Grid col={3} fr={1} gap="2rem">
+      <div className={s.CardGrid}>
         {data?.items.map((item) => {
           return (
             <EstateCard
@@ -28,7 +29,7 @@ export const HomesForSale = () => {
             />
           );
         })}
-      </Grid>
+      </div>
     </Section>
   );
 };

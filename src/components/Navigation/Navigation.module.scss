@@ -24,3 +24,17 @@
     color: $brown;
   }
 }
+
+@media (max-width: 768px) {
+  .Navigation {
+    width: 100%;
+
+    ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}
